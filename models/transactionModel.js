@@ -1,16 +1,16 @@
 //user model
 module.exports = (sequelize, DataTypes) => {
-    const Transaction = sequelize.define( "TBL_HEADER_TRANSACTION", {
+    const Transaction = sequelize.define( "Transactions", {
         details_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.BIGINT,
             allowNull: false,
         },
         bookings_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.BIGINT,
             allowNull: false,
         },
         users_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.BIGINT,
             allowNull: false,
         },
         name_of_customer_bank: {
@@ -38,18 +38,17 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         status: {
-            type: DataTypes.integer,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         total_payment: {
-            type: DataTypes.integer,
+            type: DataTypes.DECIMAL(15, 0),
             allowNull: false
         },
         description: {
             type: DataTypes.string,
             allowNull: false
         },
-
-    }, {timestamps: true}, )
+    }, {tableName:'tbl_header_transaction'}, {timestamps: true}, )
     return Transaction
  }

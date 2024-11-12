@@ -2,11 +2,11 @@
 module.exports = (sequelize, DataTypes) => {
     const Booking = sequelize.define( "bookings", {
         bookings_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.BIGINT,
             allowNull: false,
         },
         fields_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.BIGINT,
             allowNull: false,
         },
         booking_date: {

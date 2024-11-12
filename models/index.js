@@ -4,7 +4,7 @@ const {Sequelize, DataTypes} = require('sequelize')
 //Database connection with dialect of postgres specifying the database we are using
 //port for my database is 5433
 //database name is discover
-const sequelize = new Sequelize(`postgres://postgres:Kontol@123@localhost:5433/discover`, {dialect: "postgres"})
+const sequelize = new Sequelize(`postgres://postgres:Kontol@123@localhost:5433/postgres`, {dialect: "postgres"})
 
 //checking if connection is done
     sequelize.authenticate().then(() => {
@@ -19,6 +19,9 @@ const sequelize = new Sequelize(`postgres://postgres:Kontol@123@localhost:5433/d
 
 //connecting to model
 db.users = require('./userModel') (sequelize, DataTypes)
+db.roles = require('./rolesModel') (sequelize, DataTypes)
+db.role_users = require('./roleUsersModel') (sequelize, DataTypes)
+db.fields = require('./fieldModel') (sequelize, DataTypes)
 
 //exporting the module
 module.exports = db

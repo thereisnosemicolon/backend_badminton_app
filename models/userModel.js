@@ -1,6 +1,11 @@
 //user model
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define( "user", {
+        id: {
+            type: DataTypes.BIGINT,
+            primaryKey: true, // Define the id column as primary key
+            autoIncrement: true,
+        },
         username: {
             type: DataTypes.STRING,
             allowNull: false,
