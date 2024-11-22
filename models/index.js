@@ -22,6 +22,8 @@ db.users = require('./userModel') (sequelize, DataTypes)
 db.roles = require('./rolesModel') (sequelize, DataTypes)
 db.role_users = require('./roleUsersModel') (sequelize, DataTypes)
 db.fields = require('./fieldModel') (sequelize, DataTypes)
+db.bookings = require('./bookingModel') (sequelize, DataTypes)
+db.payments = require('./transactionModel') (sequelize, DataTypes)
 
 //exporting the module
 module.exports = db

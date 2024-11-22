@@ -1,16 +1,8 @@
 //user model
 module.exports = (sequelize, DataTypes) => {
     const Booking = sequelize.define( "bookings", {
-        bookings_id: {
-            type: DataTypes.BIGINT,
-            allowNull: false,
-        },
         fields_id: {
             type: DataTypes.BIGINT,
-            allowNull: false,
-        },
-        booking_date: {
-            type: DataTypes.DATE,
             allowNull: false,
         },
         play_date: {
@@ -18,17 +10,17 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         time_start: {
-            type: DataTypes.time,
+            type: DataTypes.TIME,
             allowNull: false
         },
         time_end: {
-            type: DataTypes.time,
+            type: DataTypes.TIME,
             allowNull: false
         },
         description: {
             type: DataTypes.STRING,
             allowNull: false
         }
-    }, {timestamps: true}, )
+    }, {timestamps: false}, )
     return Booking
  }

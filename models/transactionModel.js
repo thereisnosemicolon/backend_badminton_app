@@ -1,10 +1,6 @@
 //user model
 module.exports = (sequelize, DataTypes) => {
-    const Transaction = sequelize.define( "Transactions", {
-        details_id: {
-            type: DataTypes.BIGINT,
-            allowNull: false,
-        },
+    const Transaction = sequelize.define( "transactions", {
         bookings_id: {
             type: DataTypes.BIGINT,
             allowNull: false,
@@ -17,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        number_of_customer_bank_account: {
+        number_of_customer_account: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -46,9 +42,9 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         description: {
-            type: DataTypes.string,
+            type: DataTypes.STRING,
             allowNull: false
         },
-    }, {tableName:'tbl_header_transaction'}, {timestamps: true}, )
+    }, {tableName:'tbl_header_transaction', timestamps:false}, )
     return Transaction
  }
